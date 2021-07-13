@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="./assets/imgs/icon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets\css\styles.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <title>TGL</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="init">
+        <a href="" class="tittle"> TGL </a>
+        <a href=""> Home </a>
+      </div>
+      
+      <div class="header-options">
+        <a href="" class="account-option"> Account </a>
+        <a href=""> Logout 
+        <i class="icon" data-feather="arrow-right"></i> 
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="alert alert-warning alert-dismissible fade" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <section>
+      <div class="games-info">
+        <h2 class="new-bet-text"> NEW BET <span class="game-bet-tex"></span> </h2>
+        <h4 class="chose-game-subtitle">Choose a game</h4>
+
+        <div class="list-of-games"></div>
+
+        <div class="game-description">
+          <h4 class="game-fill-info">Fill your bet</h4>
+          <span class="game-description"></span>
+        </div>
+
+      </div>
+
+      <div class="games-list-numbers"></div>
+
+      <div class="games-button">
+        <div class="games-options">
+          <button class="game-options-complete">Complete Gamer</button>
+          <button class="game-options-clear">Clear Game</button>
+        </div>
+
+        <div class="games-add-cart">
+          <button class="games-add-cart-button">
+            <i class="icon" data-feather="shopping-cart"></i> 
+            Add to cart
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <aside>
+      <div class="cart-container">
+      <div class="cart-info">
+        <h2 class="cart-title"> CART </span> </h2>
+
+        <div class="cart-list"> Seu carrinho está vazio!</div>
+      </div>
+
+      <div class="cart-total-price-infos">
+      <h2 class="cart-title">
+        Cart
+        <h3 class="cart-total-price">R$0,00</h3>
+      </h2>
+    </div>
+
+      </div>
+      <div class="cart-save">
+        <a href="">
+          Save 
+          <i class="icon" data-feather="arrow-right"></i>
+        </a>
+      </div>
+    </aside>
+  </main>
+
+  <section> 
+      <footer>
+        Copyright 2021
+      </footer>
+  </section>
+  
+  <script src="js\scripts.js"></script>
+</body>
+</html>
