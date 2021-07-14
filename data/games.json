@@ -26,6 +26,15 @@
       "max-number": 5,
       "color": "#F79C31",
       "min-cart-value": 30
+    },
+    {
+      "type": "LotoFacil",
+      "description": "Escolha 8 números dos 80 disponíveis na lotoFácil. 5, 4, 3 ou 2 acertos. São seis sorteios semanais e seis chances de ganhar.",
+      "range": 30,
+      "price": 1.2,
+      "max-number": 9,
+      "color": "#FF0000",
+      "min-cart-value": 30
     }
   ]
 }

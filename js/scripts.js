@@ -10,7 +10,7 @@ feather.replace();
    var $divListGames = getElement('[class=list-of-games]');
    var $divNumberGame = getElement('[class="games-list-numbers"]');
    var $cartList = getElement('[class="cart-list"]');
-
+   var $alert = document.getElementsByClassName("alert-warning");
 
    function getElement(attributes){
      return document.querySelector(attributes);
@@ -33,6 +33,7 @@ feather.replace();
        }
      }
      createEventForButtonOptions();
+     closeAlert();
    }
 
    function createGamesListButtons() {
@@ -78,11 +79,10 @@ feather.replace();
            var numberIndex = listOfNumbers.indexOf(button.innerHTML);
            listOfNumbers.splice(numberIndex, 1);
          } else if(listOfNumbers.length >= selectedGame[0]['max-number']){
-          var alert = document.getElementsByClassName("alert-warning");
           var content = document.createTextNode('Quantidade de números máxima selecionada!');
 
-          alert[1].appendChild(content);
-          alert[1].setAttribute('class', 'alert alert-warning alert-dismissible fade show');
+          $alert[1].appendChild(content);
+          $alert[1].setAttribute('class', 'alert alert-warning alert-dismissible fade show');
           return;
 
          }
@@ -179,6 +179,7 @@ feather.replace();
      // EVENT TO COMPLETE RANDOM GAME
      getElement('[class="game-options-complete"]')
        .addEventListener('click', () => {
+        clearSelectedNumbers();
          completeRandomNumers();
        })
    }
@@ -196,11 +197,10 @@ feather.replace();
        color: selectedGame[0].color
      }
      if(newGame.numbers.length < selectedGame[0]['max-number']){ // REVER ESSE IF
-      var alert = document.getElementsByClassName("alert-warning");
-      var content = document.createTextNode(`O jogo necessita de ${selectedGame[0]['max-number']} números`);
 
-      alert[0].appendChild(content);
-      alert[0].setAttribute('class', 'alert alert-warning alert-dismissible fade show');
+      var content = document.createTextNode(`O jogo necessita de ${selectedGame[0]['max-number']} números`);
+      $alert[0].appendChild(content);
+      $alert[0].setAttribute('class', 'alert alert-warning alert-dismissible fade show');
       return;
      }
 
@@ -283,6 +283,17 @@ feather.replace();
        listAllGamesCartAgain();
      })
 
+   }
+
+   function closeAlert(){
+    var $close = document.getElementsByClassName("close");
+    for (let i = 0; i < $close.length; i++) {
+      $close[i].addEventListener('click', () => {
+        for (let j = 0; j < $alert.length; j++) {
+          $alert[j].setAttribute('class', 'alert alert-warning alert-dismissible fade');
+        }
+      });
+    }
    }
 
    function listAllGamesCartAgain(){
